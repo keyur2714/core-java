@@ -25,10 +25,25 @@ public class PatternDriver {
 		}
 		
 		System.out.println("-----------------");
-		
+		String capitalString = str.toUpperCase();
 		for(int i=0;i<length;i++) {
 			for(int j=0;j<=i;j++) {
-				System.out.print(str.charAt(j));
+				System.out.print(capitalString.charAt(j));
+			}
+			System.out.println();
+		}
+		
+		
+		System.out.println("-----------------");		
+		for(int i=0;i<length;i++) {
+			for(int j=0;j<=i;j++) {
+				if(str.charAt(j) >= 65 && str.charAt(j) <= 90) {
+					System.out.print(str.toLowerCase().charAt(j));
+				}else if(str.charAt(j) >= 97 && str.charAt(j) <= 122) {
+					System.out.print(str.toUpperCase().charAt(j));
+				}else {
+					System.out.print(str.charAt(j));
+				}				
 			}
 			System.out.println();
 		}
@@ -41,6 +56,27 @@ public class PatternDriver {
 		for(int i=1;i<=no;i++) {
 			System.out.print(i +" ");
 		}
+		System.out.println("------------");
+		for(int i=1;i<=no;i++) {
+			if(i%2 == 0) {
+				continue;
+			}else {
+				System.out.print(i+" ");
+			}
+		}
+		
+		System.out.println("Sum of N numbers");
+		int sum = 0;
+		for(int i=1;i<=no;i++) {
+			sum = sum + i;
+		}
+		System.out.println("Sum is : "+sum);
+		
+		float intrest = 100000 * 8 * 5 / 100;
+		
+		System.out.println(intrest);
+				
+		
 	}
 
 }
