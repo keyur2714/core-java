@@ -10,30 +10,50 @@ public class TestDriver {
 	
 		System.out.println("Hello Radhe Krishna...!");
 		
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.print("Enter Employee Id : ");
-		Integer empId = scanner.nextInt();	
+		System.out.print("Enter Number of Employee : ");
+		int noOfEmployee = scanner.nextInt();
 		
-		System.out.print("Enter Employee Name : ");
-		String empName = scanner.next();
 		
-		System.out.print("Enter Employe Designation : ");
-		String designation = scanner.next();
+		EmployeeDTO employee[]=new EmployeeDTO[noOfEmployee]; //Declaration of Array
 		
-		System.out.print("Enter Employe Department : ");
-		String dept = scanner.next();
+		for(int i=0;i<employee.length;i++) {
+			
+			System.out.print("Enter Employee Id of employee["+i+"] : ");
+			Integer empId = scanner.nextInt();	
+			
+			System.out.print("Enter Employee Name of employee["+i+"] : ");
+			String empName = scanner.next();
+			
+			System.out.print("Enter Employe Designation of employee["+i+"] : ");
+			String designation = scanner.next();
+			
+			System.out.print("Enter Employe Department of employee["+i+"] : ");
+			String dept = scanner.next();
+			
+			System.out.print("Enter Employee Salary of employee["+i+"] : ");
+			Double salary = scanner.nextDouble();
+			
+			employee[i]=new EmployeeDTO(empId, empName, designation, dept, salary);
+		}
 		
-		System.out.print("Enter Employee Salary : ");
-		Double salary = scanner.nextDouble();
+		System.out.println("============Display Employee=============");
+		
+		for(int i=0;i<employee.length;i++) {
+			employee[i].display();
+		}
+		
+		
 
 		EmployeeDTO employee1 = new EmployeeDTO();
 		
-		employee1.setEmpId(empId);
-		employee1.setName(empName);
-		employee1.setDesignation(designation);
-		employee1.setDeptName(dept);
-		employee1.setSalary(salary);
+		employee1.setEmpId(27);
+		employee1.setName("keyur");
+		employee1.setDesignation("SE");
+		employee1.setDeptName("IT");
+		employee1.setSalary(44444.4);
 		
 		
 		EmployeeDTO employee2 = new EmployeeDTO();
